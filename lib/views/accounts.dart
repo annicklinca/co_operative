@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyProduction extends StatefulWidget {
-  const MyProduction({Key? key}) : super(key: key);
+class CreateAccounts extends StatefulWidget {
+  const CreateAccounts({Key? key}) : super(key: key);
 
   @override
-  _MyProductionState createState() => _MyProductionState();
+  _CreateAccountState createState() => _CreateAccountState();
 }
 
-class _MyProductionState extends State<MyProduction> {
+class _CreateAccountState extends State<CreateAccounts> {
    bool _isObscure = true;
 
   @override
@@ -23,7 +23,7 @@ class _MyProductionState extends State<MyProduction> {
             Container(
               padding: EdgeInsets.only(left: 120, top: 80),
               child: Text(
-                'Add Production!',
+                'Add Co_operatives!',
                 style: TextStyle(color: Colors.blue, fontSize: 25),
               ),
             ),
@@ -84,33 +84,7 @@ class _MyProductionState extends State<MyProduction> {
                           SizedBox(
                             height: 30,
                           ),
-                            TextField(
-            obscureText: _isObscure,
-            decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                     borderSide: BorderSide(width: 3, color: Colors.blue),
-                     borderRadius: BorderRadius.circular(10),
-                        ),
-                   fillColor: Colors.black,
-                labelText: 'Production Quantity',
-                labelStyle: TextStyle(color: Colors.black,),
-                
-                
-                // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
-                    ),
-          ),
-                          
-                          SizedBox(
-                            height: 30,
-                          ),
+ 
                   TextField(
             obscureText: _isObscure,
             decoration: InputDecoration(
@@ -119,30 +93,18 @@ class _MyProductionState extends State<MyProduction> {
                      borderRadius: BorderRadius.circular(10),
                         ),
                    fillColor: Colors.black,
-                labelText: 'Date',
+                labelText: 'Password',
                 labelStyle: TextStyle(color: Colors.black,),
                 
                 
                 // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
+           
                     ),
           ),
                           SizedBox(
                             height: 20,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                           
-                            ],                                        
-                          ),
+                     
                           SizedBox(
                             height: 10,
                           ),
@@ -152,9 +114,9 @@ class _MyProductionState extends State<MyProduction> {
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.blue,
-                      child: Text('Save'),
+                      child: Text('Create Account'),
                       onPressed: () {
-                      Navigator.pushNamed(context, 'report');
+                      Navigator.pushNamed(context, 'products');
                        },
                     )),
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyProduction extends StatefulWidget {
-  const MyProduction({Key? key}) : super(key: key);
+class Products extends StatefulWidget {
+  const Products({Key? key}) : super(key: key);
 
   @override
-  _MyProductionState createState() => _MyProductionState();
+  _ProductState createState() => _ProductState();
 }
 
-class _MyProductionState extends State<MyProduction> {
+class _ProductState extends State<Products> {
    bool _isObscure = true;
 
   @override
@@ -21,9 +21,9 @@ class _MyProductionState extends State<MyProduction> {
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 120, top: 80),
+              padding: EdgeInsets.only(left: 120, top: 20),
               child: Text(
-                'Add Production!',
+                'Add Products',
                 style: TextStyle(color: Colors.blue, fontSize: 25),
               ),
             ),
@@ -32,10 +32,20 @@ class _MyProductionState extends State<MyProduction> {
                 
               child: Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.3),
+                    top: MediaQuery.of(context).size.height * 0.2),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Container(
+                  child: Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: const Text(
+                        ' "Add Products here"\n ',
+                        style: TextStyle(
+                            fontSize: 17,),
+                      )
+                   ),
+              ),
                     Container(
                       margin: EdgeInsets.only(left: 35, right: 35,),
                       child: Column(
@@ -50,7 +60,7 @@ class _MyProductionState extends State<MyProduction> {
                               ),
                           
                                 filled: true,
-                                labelText: "Co_operative name",
+                                labelText: "Fish name",
                                 labelStyle: TextStyle(color: Colors.black,)
                                 ),
                                 
@@ -92,7 +102,7 @@ class _MyProductionState extends State<MyProduction> {
                      borderRadius: BorderRadius.circular(10),
                         ),
                    fillColor: Colors.black,
-                labelText: 'Production Quantity',
+                labelText: 'Fish Quantity',
                 labelStyle: TextStyle(color: Colors.black,),
                 
                 
@@ -111,29 +121,7 @@ class _MyProductionState extends State<MyProduction> {
                           SizedBox(
                             height: 30,
                           ),
-                  TextField(
-            obscureText: _isObscure,
-            decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                     borderSide: BorderSide(width: 3, color: Colors.blue),
-                     borderRadius: BorderRadius.circular(10),
-                        ),
-                   fillColor: Colors.black,
-                labelText: 'Date',
-                labelStyle: TextStyle(color: Colors.black,),
-                
-                
-                // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
-                    ),
-          ),
+
                           SizedBox(
                             height: 20,
                           ),
@@ -152,7 +140,7 @@ class _MyProductionState extends State<MyProduction> {
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.blue,
-                      child: Text('Save'),
+                      child: Text('Add Product'),
                       onPressed: () {
                       Navigator.pushNamed(context, 'report');
                        },
