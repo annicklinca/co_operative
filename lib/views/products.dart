@@ -16,15 +16,15 @@ class _ProductState extends State<Products> {
  
     
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 120, top: 20),
+              padding: EdgeInsets.only(left: 60, top: 50),
               child: Text(
                 'Add Products',
-                style: TextStyle(color: Colors.blue, fontSize: 25),
+                style: TextStyle(color: Colors.blue, fontSize: 25,fontWeight: FontWeight.bold),
               ),
             ),
             
@@ -51,7 +51,7 @@ class _ProductState extends State<Products> {
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(width: 3, color: Colors.blue),
@@ -61,36 +61,11 @@ class _ProductState extends State<Products> {
                           
                                 filled: true,
                                 labelText: "Fish name",
-                                labelStyle: TextStyle(color: Colors.black,)
+                                labelStyle: TextStyle(color: Colors.white,)
                                 ),
                                 
                           ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                       TextField(
-            obscureText: _isObscure,
-            decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                     borderSide: BorderSide(width: 3, color: Colors.blue),
-                     borderRadius: BorderRadius.circular(10),
-                        ),
-                labelText: ' Address',
-                labelStyle: TextStyle(color: Colors.black,),
-                
-                
-                // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
-                    ),
-          ),
-                        
+           
                           SizedBox(
                             height: 30,
                           ),
@@ -101,23 +76,31 @@ class _ProductState extends State<Products> {
                      borderSide: BorderSide(width: 3, color: Colors.blue),
                      borderRadius: BorderRadius.circular(10),
                         ),
-                   fillColor: Colors.black,
+                   fillColor: Colors.white,
                 labelText: 'Fish Quantity',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
+              
+                    ),
+          ),
+                        SizedBox(
+                            height: 30,
+                          ),
+
+                   TextField(
+            obscureText: _isObscure,
+            decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                     borderSide: BorderSide(width: 3, color: Colors.blue),
+                     borderRadius: BorderRadius.circular(10),
+                        ),
+                labelText: ' Date',
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
+               
                     ),
           ),
-                          
                           SizedBox(
                             height: 30,
                           ),
@@ -136,13 +119,13 @@ class _ProductState extends State<Products> {
                           ),
                           
                       Container(
-                     padding: const EdgeInsets.fromLTRB(50, 0, 0, 10),
+                     padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.blue,
                       child: Text('Add Product'),
                       onPressed: () {
-                      Navigator.pushNamed(context, 'report');
+                      Navigator.pushNamed(context, 'analyst');
                        },
                     )),
 

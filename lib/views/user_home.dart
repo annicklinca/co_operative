@@ -1,10 +1,10 @@
 
-import 'package:co_operative/views/production.dart';
+import 'package:co_operative/views/products.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) { 
@@ -45,7 +45,7 @@ class WelcomePage extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyProduction()));
+                        MaterialPageRoute(builder: (context) => Products()));
                     // Get.to(nextView())
                   },
                   style: TextButton.styleFrom(
@@ -55,7 +55,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                    child: 
                   Text(
-                  'Add Production',
+                  'Add Products',
                 ),
                 ),
               ],

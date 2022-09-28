@@ -16,15 +16,15 @@ class _MyProductionState extends State<MyProduction> {
  
     
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 120, top: 80),
+              padding: EdgeInsets.only(left: 60, top: 80),
               child: Text(
-                'Add Production!',
-                style: TextStyle(color: Colors.blue, fontSize: 25),
+                'Add Production',
+                style: TextStyle(color: Colors.blue, fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
             
@@ -41,7 +41,7 @@ class _MyProductionState extends State<MyProduction> {
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(width: 3, color: Colors.blue),
@@ -51,7 +51,7 @@ class _MyProductionState extends State<MyProduction> {
                           
                                 filled: true,
                                 labelText: "Co_operative name",
-                                labelStyle: TextStyle(color: Colors.black,)
+                                labelStyle: TextStyle(color: Colors.white,)
                                 ),
                                 
                           ),
@@ -66,18 +66,11 @@ class _MyProductionState extends State<MyProduction> {
                      borderRadius: BorderRadius.circular(10),
                         ),
                 labelText: ' Address',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
+             
                     ),
           ),
                         
@@ -93,18 +86,11 @@ class _MyProductionState extends State<MyProduction> {
                         ),
                    fillColor: Colors.black,
                 labelText: 'Production Quantity',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
+              
                     ),
           ),
                           
@@ -118,20 +104,13 @@ class _MyProductionState extends State<MyProduction> {
                      borderSide: BorderSide(width: 3, color: Colors.blue),
                      borderRadius: BorderRadius.circular(10),
                         ),
-                   fillColor: Colors.black,
+                   fillColor: Colors.white,
                 labelText: 'Date',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
-                suffixIcon: IconButton(
-                    icon: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
-                    onPressed: () {
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    })
+            
                     ),
           ),
                           SizedBox(

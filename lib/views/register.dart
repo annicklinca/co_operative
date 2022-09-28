@@ -16,15 +16,15 @@ class _MyRegisterState extends State<MyRegister> {
  
     
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 120, top: 80),
+              padding: EdgeInsets.only(left: 40, top: 80),
               child: Text(
                 'Please Register Here!',
-                style: TextStyle(color: Colors.blue, fontSize: 25),
+                style: TextStyle(color: Colors.blue, fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
             
@@ -51,7 +51,7 @@ class _MyRegisterState extends State<MyRegister> {
                           
                                 filled: true,
                                 labelText: "Fill Username",
-                                labelStyle: TextStyle(color: Colors.black,)
+                                labelStyle: TextStyle(color: Colors.white,)
                                 ),
                                 
                           ),
@@ -66,7 +66,7 @@ class _MyRegisterState extends State<MyRegister> {
                      borderRadius: BorderRadius.circular(10),
                         ),
                 labelText: 'Fill Address',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
@@ -79,7 +79,7 @@ class _MyRegisterState extends State<MyRegister> {
                       });
                     })
                     ),
-          ),
+                   ),
                         
                           SizedBox(
                             height: 30,
@@ -93,7 +93,7 @@ class _MyRegisterState extends State<MyRegister> {
                         ),
                    fillColor: Colors.black,
                 labelText: 'Fill Email',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
@@ -118,7 +118,7 @@ class _MyRegisterState extends State<MyRegister> {
                      borderSide: BorderSide(width: 3, color: Colors.blue),
                      borderRadius: BorderRadius.circular(10),
                         ),
-                   fillColor: Colors.black,
+                   fillColor: Colors.white,
                 labelText: 'Password',
                 labelStyle: TextStyle(color: Colors.black,),
                 

@@ -16,15 +16,15 @@ class _CreateAccountState extends State<CreateAccounts> {
  
     
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 120, top: 80),
+              padding: EdgeInsets.only(left: 60, top: 80),
               child: Text(
-                'Add Co_operatives!',
-                style: TextStyle(color: Colors.blue, fontSize: 25),
+                'Add Co_operatives',
+                style: TextStyle(color: Colors.blue, fontSize: 25,fontWeight: FontWeight.bold),
               ),
             ),
             
@@ -41,7 +41,7 @@ class _CreateAccountState extends State<CreateAccounts> {
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(width: 3, color: Colors.blue),
@@ -51,7 +51,7 @@ class _CreateAccountState extends State<CreateAccounts> {
                           
                                 filled: true,
                                 labelText: "Co_operative name",
-                                labelStyle: TextStyle(color: Colors.black,)
+                                labelStyle: TextStyle(color: Colors.white,)
                                 ),
                                 
                           ),
@@ -66,7 +66,7 @@ class _CreateAccountState extends State<CreateAccounts> {
                      borderRadius: BorderRadius.circular(10),
                         ),
                 labelText: ' Address',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
@@ -94,7 +94,7 @@ class _CreateAccountState extends State<CreateAccounts> {
                         ),
                    fillColor: Colors.black,
                 labelText: 'Password',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
@@ -110,13 +110,13 @@ class _CreateAccountState extends State<CreateAccounts> {
                           ),
                           
                       Container(
-                     padding: const EdgeInsets.fromLTRB(50, 0, 0, 10),
+                     padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.blue,
                       child: Text('Create Account'),
                       onPressed: () {
-                      Navigator.pushNamed(context, 'products');
+                      Navigator.pushNamed(context, 'user_home');
                        },
                     )),
 

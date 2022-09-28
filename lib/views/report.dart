@@ -27,7 +27,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -37,9 +37,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         title: const Text('All Production', style: TextStyle(color: Colors.blue),),
         // actions: [
         //   IconButton(
@@ -68,9 +68,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     ),
                     title:
                     Text('On 23/07/2022',
-                      style: TextStyle(color: Colors.black, fontSize: 15), ),
-                    subtitle: Text('Quantity:30kg',
-                      style: TextStyle(color: Colors.black, fontSize: 10), ),
+                      style: TextStyle(color: Colors.white, fontSize: 15), ),
+                    subtitle: Text('Product: Tilapia \n Quantity:30kg',
+                      style: TextStyle(color: Colors.white, fontSize: 10), ),
 
                   ),
                   ListTile(
@@ -82,9 +82,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     ),
                     title:
                     Text('On 25/09/2022',
-                      style: TextStyle(color: Colors.black, fontSize: 15), ),
-                    subtitle: Text('Quantity:50kg',
-                      style: TextStyle(color: Colors.black, fontSize: 10), ),
+                      style: TextStyle(color: Colors.white, fontSize: 15), ),
+                    subtitle: Text('Product: Fillet \n Quantity:50kg',
+                      style: TextStyle(color: Colors.white, fontSize: 10), ),
 
                   ),
                 ],

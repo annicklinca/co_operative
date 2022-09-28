@@ -39,6 +39,7 @@ class StartState extends State<SplashScreen> {
 
   Widget initWidget(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
       body: Stack(
         children: [
           Container(
@@ -46,11 +47,13 @@ class StartState extends State<SplashScreen> {
         image: DecorationImage(
             image: AssetImage('assets/kenny.png'), fit: BoxFit.cover),
       ),
+      
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 120, top: 140),
+              padding: EdgeInsets.only(left: 60, top: 140),
               child: Text(
                 'Fish_Production ',
                 style: TextStyle(color: Colors.blue, fontSize: 33, fontWeight: FontWeight.bold),

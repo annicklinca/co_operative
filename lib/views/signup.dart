@@ -16,15 +16,15 @@ class _MyLoginState extends State<MyLogin> {
  
     
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 120, top: 140),
+              padding: EdgeInsets.only(left: 80, top: 140),
               child: Text(
-                'Please Login Here!',
-                style: TextStyle(color: Colors.blue, fontSize: 25),
+                'Please Login Here',
+                style: TextStyle(color: Colors.blue, fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
             
@@ -41,7 +41,7 @@ class _MyLoginState extends State<MyLogin> {
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(width: 3, color: Colors.blue),
@@ -50,8 +50,9 @@ class _MyLoginState extends State<MyLogin> {
                               ),
                           
                                 filled: true,
+                                 fillColor: Colors.black,
                                 labelText: "Username",
-                                labelStyle: TextStyle(color: Colors.black,)
+                                labelStyle: TextStyle(color: Colors.white,)
                                 ),
                                 
                           ),
@@ -67,7 +68,7 @@ class _MyLoginState extends State<MyLogin> {
                         ),
                    fillColor: Colors.black,
                 labelText: 'Password',
-                labelStyle: TextStyle(color: Colors.black,),
+                labelStyle: TextStyle(color: Colors.white,),
                 
                 
                 // this button is used to toggle the password visibility
