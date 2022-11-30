@@ -8,13 +8,11 @@ class Products extends StatefulWidget {
 }
 
 class _ProductState extends State<Products> {
-   bool _isObscure = true;
+  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
     return Container(
- 
-    
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Stack(
@@ -24,12 +22,13 @@ class _ProductState extends State<Products> {
               padding: EdgeInsets.only(left: 60, top: 50),
               child: Text(
                 'Add Products',
-                style: TextStyle(color: Colors.blue, fontSize: 25,fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
               ),
             ),
-            
             SingleChildScrollView(
-                
               child: Container(
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height * 0.2),
@@ -37,98 +36,94 @@ class _ProductState extends State<Products> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                  child: Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: const Text(
-                        ' "Add Products here"\n ',
-                        style: TextStyle(
-                            fontSize: 17,),
-                      )
-                   ),
-              ),
+                      child: Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                          child: const Text(
+                            ' "Add Products here"\n ',
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          )),
+                    ),
                     Container(
-                      margin: EdgeInsets.only(left: 35, right: 35,),
+                      margin: EdgeInsets.only(
+                        left: 35,
+                        right: 35,
+                      ),
                       child: Column(
                         children: [
                           TextField(
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(width: 3, color: Colors.blue),
-                                borderRadius: BorderRadius.circular(10),
-                                
-                              ),
-                          
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(width: 3, color: Colors.blue),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
                                 filled: true,
                                 labelText: "Fish name",
-                                labelStyle: TextStyle(color: Colors.white,)
-                                ),
-                                
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                )),
                           ),
-           
                           SizedBox(
                             height: 30,
                           ),
-                            TextField(
-            obscureText: _isObscure,
-            decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                     borderSide: BorderSide(width: 3, color: Colors.blue),
-                     borderRadius: BorderRadius.circular(10),
-                        ),
-                   fillColor: Colors.white,
-                labelText: 'Fish Quantity',
-                labelStyle: TextStyle(color: Colors.white,),
-              
-                    ),
-          ),
-                        SizedBox(
-                            height: 30,
+                          TextField(
+                            obscureText: _isObscure,
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 3, color: Colors.blue),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              fillColor: Colors.white,
+                              labelText: 'Fish Quantity',
+                              labelStyle: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
-
-                   TextField(
-            obscureText: _isObscure,
-            decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                     borderSide: BorderSide(width: 3, color: Colors.blue),
-                     borderRadius: BorderRadius.circular(10),
-                        ),
-                labelText: ' Date',
-                labelStyle: TextStyle(color: Colors.white,),
-                
-                
-                // this button is used to toggle the password visibility
-               
-                    ),
-          ),
                           SizedBox(
                             height: 30,
                           ),
+                          TextField(
+                            obscureText: _isObscure,
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 3, color: Colors.blue),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              labelText: ' Date',
+                              labelStyle: TextStyle(
+                                color: Colors.white,
+                              ),
 
+                              // this button is used to toggle the password visibility
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
                           SizedBox(
                             height: 20,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                           
-                            ],                                        
+                            children: [],
                           ),
                           SizedBox(
                             height: 10,
                           ),
-                          
-                      Container(
-                     padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
-                    child: RaisedButton(
-                      textColor: Colors.white,
-                      color: Colors.blue,
-                      child: Text('Add Product'),
-                      onPressed: () {
-                      Navigator.pushNamed(context, 'analyst');
-                       },
-                    )),
-
+                          Container(
+                              padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
+                              child: ElevatedButton(
+                                child: Text('Add Product'),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'analyst');
+                                },
+                              )),
                         ],
                       ),
                     )
