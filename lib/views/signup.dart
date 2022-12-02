@@ -1,4 +1,6 @@
+import 'package:co_operative/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -9,7 +11,7 @@ class MyLogin extends StatefulWidget {
 
 class _MyLoginState extends State<MyLogin> {
   bool _isObscure = true;
-
+  final loginController = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,14 +37,19 @@ class _MyLoginState extends State<MyLogin> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Obx(() => Text(
+                          loginController.message.toString(),
+                          style: const TextStyle(color: Colors.white),
+                        )),
                     Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         left: 35,
                         right: 35,
                       ),
                       child: Column(
                         children: [
                           TextField(
+                            controller: loginController.emailController,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
@@ -61,7 +68,9 @@ class _MyLoginState extends State<MyLogin> {
                             height: 30,
                           ),
                           TextField(
+                            controller: loginController.passwordController,
                             obscureText: _isObscure,
+                             style: const TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
@@ -70,6 +79,7 @@ class _MyLoginState extends State<MyLogin> {
                                 ),
                                 fillColor: Colors.black,
                                 labelText: 'Password',
+                              
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 ),
@@ -103,9 +113,12 @@ class _MyLoginState extends State<MyLogin> {
                               width: double.infinity,
                               decoration: BoxDecoration(color: Colors.blue),
                               child: TextButton(
-                                child: Text('Login',style: TextStyle(color:Colors.white),),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'home');
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () async {
+                                  loginController.checkLogin();
                                 },
                               )),
                           Column(

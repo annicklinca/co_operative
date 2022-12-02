@@ -9,9 +9,11 @@ import 'package:co_operative/views/signup.dart';
 import 'package:co_operative/views/splash_view.dart';
 import 'package:co_operative/views/user_home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(
+    GetMaterialApp(
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
     routes: {
