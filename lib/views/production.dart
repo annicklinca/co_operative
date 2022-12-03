@@ -14,6 +14,10 @@ class _MyProductionState extends State<MyProduction> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+         appBar: AppBar(
+        title: Text('All products', style: TextStyle(color: Colors.blue),),
+        backgroundColor: Colors.black,
+        ),
         backgroundColor: Colors.black,
         body: Stack(
           children: [

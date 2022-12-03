@@ -70,7 +70,7 @@ class _MyLoginState extends State<MyLogin> {
                           TextField(
                             controller: loginController.passwordController,
                             obscureText: _isObscure,
-                             style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
@@ -79,7 +79,6 @@ class _MyLoginState extends State<MyLogin> {
                                 ),
                                 fillColor: Colors.black,
                                 labelText: 'Password',
-                              
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 ),
@@ -98,14 +97,25 @@ class _MyLoginState extends State<MyLogin> {
                                       });
                                     })),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 40,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [],
-                          ),
-                          SizedBox(
+                          loginController.loading.toString() == 'true'
+                              ? const Text(
+                                  'loading...',
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              : const Text(''),
+                          Obx(() => loginController.loading.toString() == 'true'
+                              ? Text(
+                                  'signin please wait....',
+                                  style: const TextStyle(color: Colors.white),
+                                )
+                              : Text(
+                                  '',
+                                  style: const TextStyle(color: Colors.white),
+                                )),
+                          const SizedBox(
                             height: 40,
                           ),
                           Container(

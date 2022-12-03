@@ -56,31 +56,37 @@ class LoginController extends GetxController {
     loading.value = true;
 
     var data = {
-      'email': emailController.text,
+      'username': emailController.text,
       'password': passwordController.text,
     };
-    if (emailController.text.isEmpty ||passwordController.text.isEmpty) {
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
       message.value = 'Email or password can not empty';
       loading.value = false;
     } else {
       var response = await CallApi().postData(data, '/login');
-      print(response);
-      var res = jsonDecode(response.toString());
-      if (response.statusCode == 201) {
-        message.value = res['message'];
-        print(res['status']);
-        SharedPreferences kubika = await SharedPreferences.getInstance();
-        //share the preferances =>
-        //kubika.setString('email', res['email']);
 
-        Get.toNamed('/home');
+      var res = jsonDecode(response.body);
+      print('Komer${response.body}');
+      if (response.statusCode == 200) {
+        message.value = 'Login success';
+        if (res['email'] !='') {
+          SharedPreferences kubika = await SharedPreferences.getInstance();
+          //share the preferances =>
+          kubika.setString('email', res['email']);
+          kubika.setString('token', res['token']);
+          Get.toNamed('home');
+        }else{
+           Get.snackbar(
+          'Error',
+          'username or password incorrect',
+          backgroundColor: const Color(0xff37C459),
+        );
+        }
 
         loading.value = false;
       } else {
         loading.value = false;
-        message.value = res['message'];
-         Get.snackbar(
-          snackPosition: SnackPosition.BOTTOM,
+        Get.snackbar(
           'Error',
           'Login failed',
           backgroundColor: const Color(0xff37C459),
