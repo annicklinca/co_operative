@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../controllers/product_controller.dart';
 
 class MyProduction extends StatefulWidget {
   const MyProduction({Key? key}) : super(key: key);
@@ -9,14 +12,17 @@ class MyProduction extends StatefulWidget {
 
 class _MyProductionState extends State<MyProduction> {
   bool _isObscure = true;
-
+  final productController = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-         appBar: AppBar(
-        title: Text('All products', style: TextStyle(color: Colors.blue),),
-        backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: Text(
+            'All products',
+            style: TextStyle(color: Colors.blue),
+          ),
+          backgroundColor: Colors.black,
         ),
         backgroundColor: Colors.black,
         body: Stack(
@@ -47,6 +53,7 @@ class _MyProductionState extends State<MyProduction> {
                       child: Column(
                         children: [
                           TextField(
+                            controller: productController.conameController,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
@@ -64,7 +71,8 @@ class _MyProductionState extends State<MyProduction> {
                             height: 30,
                           ),
                           TextField(
-                            obscureText: _isObscure,
+                            controller: productController.addressController,
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
@@ -83,7 +91,8 @@ class _MyProductionState extends State<MyProduction> {
                             height: 30,
                           ),
                           TextField(
-                            obscureText: _isObscure,
+                            controller: productController.quantityController,
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
@@ -103,7 +112,8 @@ class _MyProductionState extends State<MyProduction> {
                             height: 30,
                           ),
                           TextField(
-                            obscureText: _isObscure,
+                            controller: productController.dateController,
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
@@ -122,19 +132,23 @@ class _MyProductionState extends State<MyProduction> {
                           SizedBox(
                             height: 20,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [],
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          Obx(() => productController.loading.toString() ==
+                                  'true'
+                              ? Text(
+                                  'Adding please wait....',
+                                  style: const TextStyle(color: Colors.white),
+                                )
+                              : Text(
+                                  '',
+                                  style: const TextStyle(color: Colors.white),
+                                )),
                           Container(
-                              padding: const EdgeInsets.fromLTRB(50, 0, 0, 10),
+                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                              width: double.infinity,
                               child: ElevatedButton(
                                 child: Text('Save'),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'report');
+                                  productController.addProduct();
                                 },
                               )),
                         ],

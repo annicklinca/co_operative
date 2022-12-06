@@ -1,4 +1,6 @@
+import 'package:co_operative/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Products extends StatefulWidget {
   const Products({Key? key}) : super(key: key);
@@ -9,13 +11,16 @@ class Products extends StatefulWidget {
 
 class _ProductState extends State<Products> {
   bool _isObscure = true;
-
+  final productController = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
-      title: const Text('Add product', style: TextStyle(color: Colors.blue),),
-      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text(
+          'Add product',
+          style: TextStyle(color: Colors.blue),
+        ),
+        backgroundColor: Colors.black,
       ),
       backgroundColor: Colors.black,
       body: Stack(
