@@ -64,4 +64,12 @@ class ProductController extends GetxController {
       }
     }
   }
+
+  // get data
+  void getAlloproduction() async {
+    var response = await CallApi().getData('/production/');
+
+    var res = jsonDecode(response.body);
+    if (response.statusCode == 200) {}
+  }
 }

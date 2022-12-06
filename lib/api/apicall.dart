@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CallApi {
-  final url = 'http://localhost:8000/api';
+  final url = 'https://cooperative-production.up.railway.app/api';
 
   postData(data, apiUrl) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
