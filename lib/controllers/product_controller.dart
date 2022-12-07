@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:co_operative/models/allproduction.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../api/apicall.dart';
@@ -11,6 +12,7 @@ class ProductController extends GetxController {
       addressController,
       quantityController,
       dateController;
+  var allproduction = <AllproductionModel>[].obs;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -18,6 +20,7 @@ class ProductController extends GetxController {
     addressController = TextEditingController();
     quantityController = TextEditingController();
     dateController = TextEditingController();
+    getAlloproduction();
     super.onInit();
   }
 
@@ -70,6 +73,12 @@ class ProductController extends GetxController {
     var response = await CallApi().getData('/production/');
 
     var res = jsonDecode(response.body);
-    if (response.statusCode == 200) {}
+    print(response.body);
+    if (response.statusCode == 200) {
+      allproduction.assignAll(response.body);
+      await Future.delayed(Duration(microseconds: 100), () {
+        loading.value = false;
+      });
+    }
   }
 }
