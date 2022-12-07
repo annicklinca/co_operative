@@ -19,7 +19,7 @@ class _MyProductionState extends State<MyProduction> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'All products',
+            'Production',
             style: TextStyle(color: Colors.blue),
           ),
           backgroundColor: Colors.black,
@@ -151,6 +151,25 @@ class _MyProductionState extends State<MyProduction> {
                                   productController.addProduct();
                                 },
                               )),
+                       Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.black
+                              ),
+                              child: Text('All Production',
+                              style: TextStyle(color: Colors.blue),),
+                              onPressed: () {
+                                Navigator.pushNamed(context, 'report');
+                              },
+                            )),
                         ],
                       ),
                     )

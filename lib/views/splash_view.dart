@@ -43,11 +43,6 @@ class StartState extends State<SplashScreen> {
       body: Stack(
         children: [
           Container(
-                decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/kenny.png'), fit: BoxFit.cover),
-      ),
-      
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Stack(

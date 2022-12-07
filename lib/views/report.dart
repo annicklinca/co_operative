@@ -1,4 +1,9 @@
+import 'package:co_operative/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:co_operative/models/allproduction.dart';
+import 'package:get/get.dart';
+
+import '../models/allproduction.dart';
 
 void main() => runApp(const Repport());
 
@@ -18,6 +23,7 @@ class Repport extends StatelessWidget {
 }
 
 class MyStatefulWidget extends StatefulWidget {
+   
   const MyStatefulWidget({Key? key}) : super(key: key);
 
   @override
@@ -36,62 +42,41 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
   @override
   Widget build(BuildContext context) {
+    final productController = Get.put(ProductController());
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text('All Production', style: TextStyle(color: Colors.blue),),
-        // actions: [
-        //   IconButton(
-        //     icon: const Icon(Icons.add_circle_outlined),
-        //     tooltip: 'Show Snackbar',
-        //     onPressed: () {
-        //       ScaffoldMessenger.of(context).showSnackBar(
-        //           const SnackBar(content: Text('This is a snackbar')));
-        //     },
-        //   ),
-        // ],
+ 
       ),
       body:
       Scrollbar(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          children: [
-            for (int index = 1; index < 12; index++)
-              Column(
-                children: [
-                  ListTile(
+       child: FutureBuilder<AllproductionModel>(
+            future: productController.allproduction,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return  ListTile(
                     leading: ExcludeSemantics(
                       child: CircleAvatar(
                         backgroundColor: Colors.green,
                         child: Icon(Icons.compare_arrows_outlined),),
                     ),
                     title:
-                    Text('On 23/07/2022',
+                    Text('',
                       style: TextStyle(color: Colors.white, fontSize: 15), ),
-                    subtitle: Text('Product: Tilapia \n Quantity:30kg',
+                    subtitle: Text('',
                       style: TextStyle(color: Colors.white, fontSize: 10), ),
 
-                  ),
-                  ListTile(
-                    
-                    leading: ExcludeSemantics(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.lightBlue,
-                        child: Icon(Icons.compare_arrows_outlined),),
-                    ),
-                    title:
-                    Text('On 25/09/2022',
-                      style: TextStyle(color: Colors.white, fontSize: 15), ),
-                    subtitle: Text('Product: Fillet \n Quantity:50kg',
-                      style: TextStyle(color: Colors.white, fontSize: 10), ),
+                  );
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
 
-                  ),
-                ],
-              )
-
-          ],
-        ),
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+            },
+          ),
       ),
     );
   }

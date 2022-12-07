@@ -18,7 +18,7 @@ class _ProductState extends State<Products> {
       appBar: AppBar(
         title: const Text(
           'Add product',
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: Color.fromARGB(255, 86, 90, 94)),
         ),
         backgroundColor: Colors.black,
       ),

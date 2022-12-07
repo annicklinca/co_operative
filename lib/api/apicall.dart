@@ -13,7 +13,7 @@ class CallApi {
         body: json.encode(data),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Token $token'
+          // 'Authorization': 'Token $token'
         });
   }
 

@@ -12,7 +12,7 @@ class ProductController extends GetxController {
       addressController,
       quantityController,
       dateController;
-  var allproduction = <AllproductionModel>[].obs;
+  var allproduction = Future.value(<AllproductionModel>[]).obs;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -67,18 +67,16 @@ class ProductController extends GetxController {
       }
     }
   }
-
-  // get data
-  void getAlloproduction() async {
+  //future
+  Future<List<AllproductionModel>> getAllpro() async {
     var response = await CallApi().getData('/production/');
 
-    var res = jsonDecode(response.body);
-    print(response.body);
-    if (response.statusCode == 200) {
-      allproduction.assignAll(response.body);
-      await Future.delayed(Duration(microseconds: 100), () {
-        loading.value = false;
-      });
-    }
+    return response.body;
+  }
+  // get data
+  void getAlloproduction() async {
+   
+      allproduction.value=getAllpro();
+     
   }
 }
