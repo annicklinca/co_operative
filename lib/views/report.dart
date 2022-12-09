@@ -53,7 +53,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body:
       Scrollbar(
        child: FutureBuilder<AllproductionModel>(
-            future: productController.allproduction,
+            // future: productController.allproduction,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return  ListTile(
