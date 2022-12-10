@@ -12,7 +12,7 @@ class AllproductionModel {
       required this.date,
       required this.id});
 
-  factory AllproductionModel.fromJson(json) {
+  factory AllproductionModel.fromJson(Map<String,dynamic>json) {
     return AllproductionModel(
         cooperative_name: json['cooperative_name'].toString(),
         address: json['address'].toString(),

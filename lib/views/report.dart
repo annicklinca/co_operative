@@ -23,7 +23,6 @@ class Repport extends StatelessWidget {
 }
 
 class MyStatefulWidget extends StatefulWidget {
-   
   const MyStatefulWidget({Key? key}) : super(key: key);
 
   @override
@@ -33,51 +32,72 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white);
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white);
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     final productController = Get.put(ProductController());
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text('All Production', style: TextStyle(color: Colors.blue),),
- 
-      ),
-      body:
-      Scrollbar(
-       child: FutureBuilder<AllproductionModel>(
-            // future: productController.allproduction,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return  ListTile(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: const Text(
+            'All Production',
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
+        body: Container(
+            child: ListView.builder(
+                itemCount: productController.allproduction.length,
+                itemBuilder: (BuildContext context, index) {
+                  return ListTile(
                     leading: ExcludeSemantics(
                       child: CircleAvatar(
                         backgroundColor: Colors.green,
-                        child: Icon(Icons.compare_arrows_outlined),),
+                        child: Icon(Icons.compare_arrows_outlined),
+                      ),
                     ),
-                    title:
-                    Text('',
-                      style: TextStyle(color: Colors.white, fontSize: 15), ),
-                    subtitle: Text('',
-                      style: TextStyle(color: Colors.white, fontSize: 10), ),
-
+                    title: Text(
+                      productController.allproduction[index].cooperative_name.toString(),
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
+                    subtitle: Text(
+                      'Quantity: ${productController.allproduction[index].quantity}',
+                      style: TextStyle(color: Colors.white, fontSize: 10),
+                    ),
                   );
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              }
+                }))
+        // FutureBuilder<String>(
+        //      // future: productController.allproduction,
+        //      builder: (context, snapshot) {
+        //        if (snapshot.hasData) {
+        //          return  ListTile(
+        //              leading: ExcludeSemantics(
+        //                child: CircleAvatar(
+        //                  backgroundColor: Colors.green,
+        //                  child: Icon(Icons.compare_arrows_outlined),),
+        //              ),
+        //              title:
+        //              Text('',
+        //                style: TextStyle(color: Colors.white, fontSize: 15), ),
+        //              subtitle: Text('',
+        //                style: TextStyle(color: Colors.white, fontSize: 10), ),
 
-              // By default, show a loading spinner.
-              return const CircularProgressIndicator();
-            },
-          ),
-      ),
-    );
+        //            );
+        //        } else if (snapshot.hasError) {
+        //          return Text('${snapshot.error}');
+        //        }
+
+        //        // By default, show a loading spinner.
+        //        return const CircularProgressIndicator();
+        //      },
+        //    ),
+        );
   }
 }
