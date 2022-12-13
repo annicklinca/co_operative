@@ -43,7 +43,7 @@ class _MyRegisterState extends State<MyRegister> {
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
@@ -51,7 +51,44 @@ class _MyRegisterState extends State<MyRegister> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 filled: true,
+                                fillColor: Colors.black,
                                 labelText: "Fill Username",
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                )),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          TextField(
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(width: 3, color: Colors.blue),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                filled: true,
+                                fillColor: Colors.black,
+                                labelText: "Fill Address",
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                )),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                             TextField(
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(width: 3, color: Colors.blue),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                filled: true,
+                                fillColor: Colors.black,
+                                labelText: "Fill Email",
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 )),
@@ -67,71 +104,10 @@ class _MyRegisterState extends State<MyRegister> {
                                       BorderSide(width: 3, color: Colors.blue),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                labelText: 'Fill Address',
-                                labelStyle: TextStyle(
-                                  color: Colors.white,
-                                ),
-
-                                // this button is used to toggle the password visibility
-                                suffixIcon: IconButton(
-                                    icon: Icon(
-                                      _isObscure
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      color: Colors.white,
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        _isObscure = !_isObscure;
-                                      });
-                                    })),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          TextField(
-                            obscureText: _isObscure,
-                            decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(width: 3, color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                fillColor: Colors.black,
-                                labelText: 'Fill Email',
-                                labelStyle: TextStyle(
-                                  color: Colors.white,
-                                ),
-
-                                // this button is used to toggle the password visibility
-                                suffixIcon: IconButton(
-                                    icon: Icon(
-                                      _isObscure
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      color: Colors.white,
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        _isObscure = !_isObscure;
-                                      });
-                                    })),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          TextField(
-                            obscureText: _isObscure,
-                            decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(width: 3, color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
                                 fillColor: Colors.white,
                                 labelText: 'Password',
                                 labelStyle: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.white,
                                 ),
 
                                 // this button is used to toggle the password visibility

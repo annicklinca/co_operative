@@ -1,5 +1,6 @@
 
 import 'package:co_operative/views/production.dart';
+import 'package:co_operative/views/products.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -55,9 +56,22 @@ class WelcomePage extends StatelessWidget {
                   ),
                    child: 
                   Text(
-                  'Add Production',
+                  'Record Production Data',
                 ),
                 ),
+             
+                        Container(
+                            padding: const EdgeInsets.fromLTRB(10, 40, 0, 10),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.blue
+                              ),
+                              child: Text('Add Product',
+                              style: TextStyle(color: Colors.white),),
+                              onPressed: () {
+                                Navigator.pushNamed(context, 'products');
+                              },
+                            )),
               ],
             ),
           ),
