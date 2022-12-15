@@ -1,4 +1,5 @@
 import 'package:co_operative/views/accounts.dart';
+import 'package:co_operative/views/allproducts.dart';
 import 'package:co_operative/views/analyst.dart';
 import 'package:co_operative/views/home.dart';
 import 'package:co_operative/views/production.dart';
@@ -24,6 +25,7 @@ void main() {
       'report': (context) => Repport(),
       'accounts': (context) => CreateAccounts(),
       'products': (context) => Products(),
+      'allproducts': (context) => Allproducts(),
       'analyst': (context) => Analysispage(),
       'user_home': (context) => HomePage(),
       'splash': (context) => SplashScreen(),

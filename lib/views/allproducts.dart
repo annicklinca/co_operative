@@ -1,14 +1,14 @@
-import 'package:co_operative/controllers/product_controller.dart';
+import 'package:co_operative/controllers/production_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:co_operative/models/allproduction.dart';
+import 'package:co_operative/models/allproduct.dart';
 import 'package:get/get.dart';
 
-import '../models/allproduction.dart';
+import '../models/allproduct.dart';
 
-void main() => runApp(const Repport());
+void main() => runApp(const Allproducts());
 
-class Repport extends StatelessWidget {
-  const Repport({Key? key}) : super(key: key);
+class Allproducts extends StatelessWidget {
+  const Allproducts({Key? key}) : super(key: key);
 
   static const String _title = 'Co_operative';
 
@@ -42,19 +42,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final productController = Get.put(ProductController());
+    final productController = Get.put(ProductionController());
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: const Text(
-            'All Production',
+            'All Product',
             style: TextStyle(color: Colors.blue),
           ),
         ),
         body: Container(
             child: ListView.builder(
-                itemCount: productController.allproduction.length,
+                itemCount: productController.allproduct.length,
                 itemBuilder: (BuildContext context, index) {
                   return ListTile(
                     leading: ExcludeSemantics(
@@ -64,16 +64,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       ),
                     ),
                     title: Text(
-                      productController.allproduction[index].cooperative_name.toString(),
+                      productController.allproduct[index].fish_name.toString(),
                       style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                     subtitle: Text(
-                      'Quantity: ${productController.allproduction[index].quantity}',
+                      'Quantity: ${productController.allproduct[index].quantity}',
                       style: TextStyle(color: Colors.white, fontSize: 10),
                     ),
                     
                   );
-                }))
+                })
+                )
+                
+                
         // FutureBuilder<String>(
         //      // future: productController.allproduction,
         //      builder: (context, snapshot) {
