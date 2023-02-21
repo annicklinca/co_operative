@@ -21,7 +21,7 @@ class _MyRegisterState extends State<MyRegister> {
             Container(
               padding: EdgeInsets.only(left: 40, top: 80),
               child: Text(
-                'Please Register Here!',
+                'Admin Login!',
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 25,
@@ -52,59 +52,27 @@ class _MyRegisterState extends State<MyRegister> {
                                 ),
                                 filled: true,
                                 fillColor: Colors.black,
-                                labelText: "Fill Username",
+                                labelText: "Admin Username",
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 )),
                           ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(width: 3, color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                filled: true,
-                                fillColor: Colors.black,
-                                labelText: "Fill Address",
-                                labelStyle: TextStyle(
-                                  color: Colors.white,
-                                )),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                             TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(width: 3, color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                filled: true,
-                                fillColor: Colors.black,
-                                labelText: "Fill Email",
-                                labelStyle: TextStyle(
-                                  color: Colors.white,
-                                )),
-                          ),
+                        
+                        
+                       
                           SizedBox(
                             height: 30,
                           ),
                           TextField(
                             obscureText: _isObscure,
+                            style: const TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
                                       BorderSide(width: 3, color: Colors.blue),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                fillColor: Colors.white,
+                                fillColor: Colors.black,
                                 labelText: 'Password',
                                 labelStyle: TextStyle(
                                   color: Colors.white,
@@ -135,11 +103,11 @@ class _MyRegisterState extends State<MyRegister> {
                             height: 10,
                           ),
                           Container(
-                              padding: const EdgeInsets.fromLTRB(50, 0, 0, 10),
+                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
                               child: ElevatedButton(
-                                child: Text('Register'),
+                                child: Text('Signup'),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'home');
+                                  Navigator.pushNamed(context, 'adminhome');
                                 },
                               )),
                           Row(
@@ -150,7 +118,7 @@ class _MyRegisterState extends State<MyRegister> {
                                   Navigator.pushNamed(context, 'signup');
                                 },
                                 child: Text(
-                                  'Already Have an Account? Sign Up',
+                                  '',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
@@ -159,16 +127,6 @@ class _MyRegisterState extends State<MyRegister> {
                                 ),
                                 style: ButtonStyle(),
                               ),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Forgot Password',
-                                    style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.blue,
-                                      fontSize: 13,
-                                    ),
-                                  )),
                             ],
                           )
                         ],

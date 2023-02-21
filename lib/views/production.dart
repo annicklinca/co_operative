@@ -62,7 +62,7 @@ class _MyProductionState extends State<MyProduction> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 filled: true,
-                                labelText: "Co_operative name",
+                                labelText: "Product name",
                                 labelStyle: TextStyle(
                                   color: Colors.white,
                                 )),

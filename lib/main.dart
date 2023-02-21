@@ -9,6 +9,9 @@ import 'package:co_operative/views/report.dart';
 import 'package:co_operative/views/signup.dart';
 import 'package:co_operative/views/splash_view.dart';
 import 'package:co_operative/views/user_home.dart';
+import 'package:co_operative/views/adminhome.dart';
+import 'package:co_operative/views/addcoperative.dart';
+import 'package:co_operative/views/allcoperative.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,10 +25,13 @@ void main() {
       'signup': (context) => MyLogin(),
       'production': (context) => MyProduction(),
       'home': (context) => WelcomePage(),
+      'adminhome': (context) => AdminPage(),
       'report': (context) => Repport(),
       'accounts': (context) => CreateAccounts(),
       'products': (context) => Products(),
+      'allcoperative': (context) => Allcoperative(),
       'allproducts': (context) => Allproducts(),
+      'addcoperative': (context) => AddCoperative(),
       'analyst': (context) => Analysispage(),
       'user_home': (context) => HomePage(),
       'splash': (context) => SplashScreen(),

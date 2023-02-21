@@ -23,7 +23,7 @@ class _MyLoginState extends State<MyLogin> {
             Container(
               padding: EdgeInsets.only(left: 80, top: 140),
               child: Text(
-                'Please Login Here',
+                'Fish Production \n\n Please Login Here',
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 25,
@@ -139,7 +139,7 @@ class _MyLoginState extends State<MyLogin> {
                                   Navigator.pushNamed(context, 'register');
                                 },
                                 child: Text(
-                                  'Do not have an account? Sign Up',
+                                  'Other User',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,

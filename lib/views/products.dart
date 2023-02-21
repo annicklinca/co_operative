@@ -153,13 +153,13 @@ class _ProductState extends State<Products> {
                                SizedBox(
                           height: 10,
                         ),
-                        Container(
+                     Container(
                             padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.black
                               ),
-                              child: Text('View Analysis',
+                              child: Text('Analysis',
                               style: TextStyle(color: Colors.blue),),
                               onPressed: () {
                                 Navigator.pushNamed(context, 'analyst');
